@@ -1,0 +1,323 @@
+
+/* Основные настройки */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(135deg, #eaf1f7, #ffffff);
+    color: #263445;
+    overflow-x: hidden;
+}
+
+/* Шапка */
+
+.header {
+    background: linear-gradient(120deg, #12375e, #087b65);
+    color: white;
+    text-align: center;
+    padding: 55px 20px;
+    animation: headerShow 1s ease;
+}
+
+.header h1 {
+    font-size: 42px;
+    margin-bottom: 12px;
+    animation: titleShow 1.2s ease;
+}
+
+.header p {
+    font-size: 19px;
+    animation: titleShow 1.6s ease;
+}
+
+/* Основной блок */
+
+main {
+    max-width: 900px;
+    margin: 35px auto;
+    padding: 15px;
+}
+
+/* Карточки */
+
+.card {
+    background: white;
+    padding: 25px;
+    margin-bottom: 22px;
+    border-radius: 16px;
+    box-shadow: 0 5px 20px #00000012;
+
+    opacity: 0;
+    animation: cardShow 0.8s ease forwards;
+
+    transition: 0.4s ease;
+}
+
+/* Появление карточек */
+
+.card:nth-child(1) {
+    animation-delay: 0.2s;
+}
+
+.card:nth-child(2) {
+    animation-delay: 0.4s;
+}
+
+.card:nth-child(3) {
+    animation-delay: 0.6s;
+}
+
+.card:nth-child(4) {
+    animation-delay: 0.8s;
+}
+
+.card:nth-child(5) {
+    animation-delay: 1s;
+}
+
+/* Эффект наведения */
+
+.card:hover {
+    transform: translateY(-7px);
+    box-shadow: 0 12px 30px #12375e30;
+}
+
+/* Заголовки */
+
+h2 {
+    color: #17619a;
+    margin-bottom: 18px;
+    font-size: 24px;
+}
+
+p {
+    line-height: 1.7;
+    margin: 8px 0;
+}
+
+/* Список услуг */
+
+ol {
+    padding-left: 25px;
+}
+
+li {
+    margin: 14px 0;
+    line-height: 1.6;
+    transition: 0.3s;
+}
+
+li:hover {
+    color: #087b65;
+    transform: translateX(7px);
+}
+
+/* Карта */
+
+.map {
+    margin-top: 20px;
+    padding: 45px 15px;
+    background: linear-gradient(135deg, #c7e8d1, #a7d9bd);
+    border: 2px solid #548b65;
+    border-radius: 13px;
+    text-align: center;
+    transition: 0.4s;
+}
+
+.map:hover {
+    transform: scale(1.02);
+}
+
+.map span {
+    font-size: 35px;
+}
+
+/* Кнопка */
+
+.button {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 15px 35px;
+
+    background: linear-gradient(120deg, #20a94b, #087b65);
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 30px;
+
+    box-shadow: 0 5px 15px #20a94b50;
+
+    transition: 0.3s;
+    animation: pulse 2s infinite;
+}
+
+.button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 8px 25px #20a94b80;
+}
+
+/* Логотип справа снизу */
+
+.logo-corner {
+    position: fixed;
+    right: 20px;
+    bottom: 20px;
+
+    width: 150px;
+    height: 116px;
+
+    overflow: hidden;
+    z-index: 1000;
+
+    animation: logoShow 1.5s ease;
+}
+
+.logo-corner img {
+    display: block;
+    width: 150px;
+    height: 150px;
+
+    object-fit: cover;
+    object-position: center top;
+
+    transition: 0.4s;
+}
+
+.logo-corner:hover img {
+    transform: scale(1.08);
+}
+
+/* Подвал */
+
+footer {
+    background: #12375e;
+    color: white;
+    text-align: center;
+    padding: 25px;
+    margin-top: 40px;
+}
+
+/* АНИМАЦИИ */
+
+@keyframes headerShow {
+    from {
+        opacity: 0;
+        transform: translateY(-40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes titleShow {
+    from {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@keyframes cardShow {
+    from {
+        opacity: 0;
+        transform: translateY(40px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes logoShow {
+    from {
+        opacity: 0;
+        transform: translateX(100px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes pulse {
+    0%, 100% {
+        box-shadow: 0 5px 15px #20a94b50;
+    }
+
+    50% {
+        box-shadow: 0 5px 25px #20a94b90;
+    }
+}
+
+/* Адаптация под телефон */
+
+@media (max-width: 600px) {
+
+    .header {
+        padding: 40px 15px;
+    }
+
+    .header h1 {
+        font-size: 32px;
+    }
+
+    .header p {
+        font-size: 16px;
+    }
+
+    main {
+        padding: 12px;
+    }
+
+    .card {
+        padding: 20px;
+    }
+
+    h2 {
+        font-size: 21px;
+    }
+
+    .logo-corner {
+        width: 100px;
+        height: 78px;
+        right: 10px;
+        bottom: 10px;
+    }
+
+    .logo-corner img {
+        width: 100px;
+        height: 100px;
+    }
+}
+
+/* Отключение анимаций по настройкам устройства */
+
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+
+    .card {
+        opacity: 1;
+    }
+}
